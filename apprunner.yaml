@@ -1,59 +1,32 @@
 version: 1.0
-applications:
-  - name: seo-tech-check-backend
-    type: nodejs
-    properties:
-      runtime: nodejs18
-      build:
-        commands:
-          - npm ci --only=production
-      start:
-        command: npm start
-      port: 3001
-      environment:
-        variables:
-          NODE_ENV: production
-          PORT: 3001
-          ENABLE_RATE_LIMITING: "true"
-          RATE_LIMIT_WINDOW_MS: "900000"
-          RATE_LIMIT_MAX_REQUESTS: "100"
-          LOG_LEVEL: info
-      healthcheck:
-        command: curl -f http://localhost:3001/health || exit 1
-        interval: 30
-        timeout: 3
-        retries: 3
-        start_period: 5
-      instance:
-        cpu: 1
-        memory: 2048
+runtime: nodejs18
+build:
+  commands:
+    - npm ci --only=production
+start:
+  command: npm start
+  network:
+    port: 3001
+    healthcheck:
+      path: /health
+      interval: 30
+      timeout: 3
+      protocol: HTTP
 
-  - name: seo-tech-check-frontend
-    type: nodejs
-    properties:
-      runtime: nodejs18
-      build:
-        commands:
-          - npm i --legacy-peer-deps
-          - npm i ajv@8.12.0 ajv-keywords@5.1.0
-          - npm run build
-      start:
-        command: npx serve -s build -l 80
-      port: 80
-      environment:
-        variables:
-          NODE_ENV: production
-          REACT_APP_API_URL: ${BACKEND_URL}/api
-      healthcheck:
-        command: curl -f http://localhost:80/health || exit 1
-        interval: 30
-        timeout: 3
-        retries: 3
-        start_period: 5
-      instance:
-        cpu: 1
-        memory: 2048
+env:
+  - name: NODE_ENV
+    value: production
+  - name: PORT
+    value: 3001
+  - name: ENABLE_RATE_LIMITING
+    value: "true"
+  - name: RATE_LIMIT_WINDOW_MS
+    value: "900000"
+  - name: RATE_LIMIT_MAX_REQUESTS
+    value: "100"
+  - name: LOG_LEVEL
+    value: info
 
-network:
-  vpc:
-    enable: true
+instance:
+  cpu: 1
+  memory: 2048

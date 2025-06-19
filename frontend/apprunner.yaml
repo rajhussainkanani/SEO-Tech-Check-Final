@@ -1,0 +1,16 @@
+# apprunner.yaml for your Frontend (React + Nginx)
+# Located at: your-single-repo/frontend/apprunner.yaml
+version: 1.0
+runtime: "python3" # Placeholder runtime when App Runner detects a Dockerfile.
+                   # The actual build and run is controlled by your Dockerfile.
+build:
+  commands:
+    # This command is a placeholder. App Runner requires at least one build command.
+    # The actual Docker build will be triggered by App Runner's internal process
+    # when it detects a Dockerfile in the specified source directory.
+    build:
+      - echo "Building frontend Docker image using provided Dockerfile from the 'frontend' subdirectory."
+run:
+  # App Runner will automatically detect your Dockerfile in the 'frontend' subdirectory
+  # and build an image. No 'command' or 'network' configuration is needed here because
+  # it's inferred from your Dockerfile (EXPOSE 80, CMD).

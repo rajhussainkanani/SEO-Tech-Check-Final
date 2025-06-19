@@ -1,0 +1,43 @@
+# apprunner.yaml for your Backend (Node.js)
+# Located at: your-single-repo/backend/apprunner.yaml
+version: 1.0
+runtime: nodejs18
+build:
+  commands:
+    # These commands are aligned with your backend Dockerfile's build steps.
+    pre-build:
+      - echo "Starting backend pre-build from the 'backend' subdirectory..."
+      - npm ci --only=production # Install production dependencies
+      - npm cache clean --force
+    build:
+      # No specific 'build' command is typically needed for Node.js backend unless you have
+      # a compilation step (e.g., TypeScript).
+      - echo "Backend build complete."
+run:
+  command: npm start
+  network:
+    port: 3001 # Your backend listens on port 3001
+  env:
+    - name: PORT
+      value: 3001
+    - name: NODE_ENV
+      value: production
+    # IMPORTANT: For sensitive keys like SCRAPE_DO_API_KEY, use AWS Secrets Manager!
+    # Hardcoding here for demonstration, but not recommended for production.
+    - name: SCRAPE_DO_API_KEY
+      value: "ef8324bc40db40949fd2819c8338c2ea0d9573d2940"
+    - name: RATE_LIMIT_WINDOW_MS
+      value: "900000"
+    - name: RATE_LIMIT_MAX_REQUESTS
+      value: "100"
+    - name: LOG_LEVEL
+      value: "info"
+    - name: ENABLE_RATE_LIMITING
+      value: "true"
+    # IMPORTANT: The FRONTEND_URL and CORS_ALLOWED_ORIGINS should be set
+    # to the *actual* App Runner URL of your frontend service once deployed.
+    # You'll need to update this after deploying the frontend.
+    - name: FRONTEND_URL
+      value: "YOUR_FRONTEND_APPRUNNER_URL_HERE" # e.g., https://your-frontend-service-id.region.awsapprunner.com
+    - name: CORS_ALLOWED_ORIGINS
+      value: "YOUR_FRONTEND_APPRUNNER_URL_HERE" # e.g., https://your-frontend-service-id.region.awsapprunner.com
