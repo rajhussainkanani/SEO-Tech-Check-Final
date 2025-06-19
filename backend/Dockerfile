@@ -6,6 +6,10 @@ RUN npm i --legacy-peer-deps && \
     npm i ajv@8.12.0 ajv-keywords@5.1.0 && \
     npm cache clean --force
 COPY ../frontend .
+
+# Set environment variable for React build
+ENV REACT_APP_API_URL=/api
+
 RUN npm run build
 
 # Backend build stage

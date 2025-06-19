@@ -43,12 +43,7 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 // CORS configuration
-app.use(cors({
-  origin: ['https://zm32ek2v4y.us-east-1.awsapprunner.com'],
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}));
+app.use(cors());  // Allow all origins in production since frontend and backend are served from same domain
 
 // Body parsing middleware
 app.use(compression());
