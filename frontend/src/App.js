@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   ThemeProvider,
   createTheme,
@@ -7,11 +7,7 @@ import {
   Box,
   Typography,
   Paper,
-  useMediaQuery,
-  Fab,
-  Zoom
 } from '@mui/material';
-import { Brightness4, Brightness7 } from '@mui/icons-material';
 import URLInput from './components/URLInput';
 import SEOResults from './components/SEOResults';
 import LoadingSpinner from './components/LoadingSpinner';
@@ -22,28 +18,15 @@ import { analyzeURL } from './services/api';
 import './App.css';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [results, setResults] = useState(null);
   const [currentUrl, setCurrentUrl] = useState('');
 
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-  // Initialize theme based on system preference
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('seo-tech-check-theme');
-    if (savedTheme) {
-      setDarkMode(savedTheme === 'dark');
-    } else {
-      setDarkMode(prefersDarkMode);
-    }
-  }, [prefersDarkMode]);
-
-  // Create theme
+  // Create theme (fixed light mode)
   const theme = createTheme({
     palette: {
-      mode: darkMode ? 'dark' : 'light',
+      mode: 'light',
       primary: {
         main: '#2196f3',
         light: '#64b5f6',
@@ -55,8 +38,8 @@ function App() {
         dark: '#c51162',
       },
       background: {
-        default: darkMode ? '#121212' : '#f5f5f5',
-        paper: darkMode ? '#1e1e1e' : '#ffffff',
+        default: '#f5f5f5',
+        paper: '#ffffff',
       },
       success: {
         main: '#4caf50',
@@ -115,12 +98,6 @@ function App() {
     },
   });
 
-  const toggleTheme = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    localStorage.setItem('seo-tech-check-theme', newMode ? 'dark' : 'light');
-  };
-
   const handleAnalyze = async (url) => {
     setLoading(true);
     setError(null);
@@ -154,43 +131,12 @@ function App() {
           minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          background: darkMode
-            ? 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)'
-            : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         }}
       >
         <Header />
         
         <Container maxWidth="lg" sx={{ flex: 1, py: 4 }}>
-          {/* Hero Section */}
-          <Box textAlign="center" mb={6}>
-            <Typography
-              variant="h1"
-              component="h1"
-              gutterBottom
-              sx={{
-                color: 'white',
-                textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                mb: 2,
-              }}
-            >
-              SEO Tech Check
-            </Typography>
-            <Typography
-              variant="h5"
-              component="p"
-              sx={{
-                color: 'rgba(255,255,255,0.9)',
-                textShadow: '0 1px 2px rgba(0,0,0,0.3)',
-                maxWidth: 600,
-                mx: 'auto',
-                mb: 4,
-              }}
-            >
-              Comprehensive technical SEO analysis to improve your search engine visibility
-            </Typography>
-          </Box>
-
           {/* Main Content */}
           <Paper
             elevation={8}
@@ -203,7 +149,9 @@ function App() {
             }}
           >
             {!results && !loading && (
-              <URLInput onAnalyze={handleAnalyze} disabled={loading} />
+              <Box textAlign="center" mb={4}>
+                <URLInput onAnalyze={handleAnalyze} disabled={loading} />
+              </Box>
             )}
 
             {loading && <LoadingSpinner />}
@@ -296,23 +244,6 @@ function App() {
         </Container>
 
         <Footer />
-
-        {/* Theme Toggle FAB */}
-        <Zoom in={true}>
-          <Fab
-            color="primary"
-            aria-label="toggle theme"
-            onClick={toggleTheme}
-            sx={{
-              position: 'fixed',
-              bottom: 24,
-              right: 24,
-              zIndex: 1000,
-            }}
-          >
-            {darkMode ? <Brightness7 /> : <Brightness4 />}
-          </Fab>
-        </Zoom>
       </Box>
     </ThemeProvider>
   );

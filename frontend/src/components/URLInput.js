@@ -89,6 +89,7 @@ const URLInput = ({ onAnalyze, disabled }) => {
             display: 'flex',
             gap: 2,
             alignItems: 'flex-start',
+            flexDirection: { xs: 'column', sm: 'row' },
           }}
         >
           <TextField

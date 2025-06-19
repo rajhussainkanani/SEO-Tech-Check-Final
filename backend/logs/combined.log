@@ -164,3 +164,54 @@
 {"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-17 18:28:39"}
 {"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-17 18:28:39"}
 {"level":"info","message":"SIGTERM received, shutting down gracefully","service":"seo-tech-check","timestamp":"2025-06-17 18:31:15"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 17:28:00"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 17:28:00"}
+{"error":"ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","ip":"::1","level":"error","message":"Unhandled error:","method":"GET","service":"seo-tech-check","stack":"Error: ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","timestamp":"2025-06-19 17:36:48","url":"/"}
+{"error":"ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","ip":"::1","level":"error","message":"Unhandled error:","method":"GET","service":"seo-tech-check","stack":"Error: ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","timestamp":"2025-06-19 17:37:09","url":"/"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"seo-tech-check","timestamp":"2025-06-19 17:37:18"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 17:37:36"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 17:37:36"}
+{"error":"ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","ip":"::1","level":"error","message":"Unhandled error:","method":"GET","service":"seo-tech-check","stack":"Error: ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","timestamp":"2025-06-19 17:37:40","url":"/"}
+{"error":"ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","ip":"::1","level":"error","message":"Unhandled error:","method":"GET","service":"seo-tech-check","stack":"Error: ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","timestamp":"2025-06-19 17:37:45","url":"/"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"seo-tech-check","timestamp":"2025-06-19 17:37:49"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 17:40:45"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 17:40:45"}
+{"error":"ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","ip":"::1","level":"error","message":"Unhandled error:","method":"GET","service":"seo-tech-check","stack":"Error: ENOENT: no such file or directory, stat '/Users/rajhussainkanani/Documents/Hykvra-Projects/SEO-Tech-Check-Final/frontend/build/index.html'","timestamp":"2025-06-19 17:40:46","url":"/"}
+{"level":"info","message":"Starting SEO analysis","options":{"includeImages":true,"includeLinks":true,"includePerformance":true,"timeout":20000},"service":"seo-tech-check","timestamp":"2025-06-19 19:27:41","url":"https://buddiez.in"}
+{"attempt":1,"level":"info","message":"Successfully scraped URL","service":"seo-tech-check","statusCode":200,"timestamp":"2025-06-19 19:27:46","url":"https://buddiez.in"}
+{"analysisData":{"issuesCount":2,"score":93},"level":"info","message":"SEO Analysis completed","service":"seo-tech-check","timestamp":"2025-06-19 19:27:46","type":"seo_analysis","url":"https://buddiez.in"}
+{"level":"info","message":"Starting SEO analysis","options":{"includeImages":true,"includeLinks":true,"includePerformance":true,"timeout":20000},"service":"seo-tech-check","timestamp":"2025-06-19 19:28:17","url":"https://cbre.com.hk"}
+{"attempt":1,"level":"info","message":"Successfully scraped URL","service":"seo-tech-check","statusCode":200,"timestamp":"2025-06-19 19:28:24","url":"https://cbre.com.hk"}
+{"analysisData":{"issuesCount":6,"score":82},"level":"info","message":"SEO Analysis completed","service":"seo-tech-check","timestamp":"2025-06-19 19:28:24","type":"seo_analysis","url":"https://cbre.com.hk"}
+{"level":"info","message":"Starting SEO analysis","options":{"includeImages":true,"includeLinks":true,"includePerformance":true,"timeout":20000},"service":"seo-tech-check","timestamp":"2025-06-19 19:49:51","url":"https://cbre.com.hk"}
+{"attempt":1,"level":"info","message":"Successfully scraped URL","service":"seo-tech-check","statusCode":200,"timestamp":"2025-06-19 19:49:56","url":"https://cbre.com.hk"}
+{"analysisData":{"issuesCount":6,"score":82},"level":"info","message":"SEO Analysis completed","service":"seo-tech-check","timestamp":"2025-06-19 19:49:56","type":"seo_analysis","url":"https://cbre.com.hk"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 20:00:13"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 20:00:13"}
+{"level":"info","message":"Starting SEO analysis","options":{"includeImages":true,"includeLinks":true,"includePerformance":true,"timeout":20000},"service":"seo-tech-check","timestamp":"2025-06-19 20:00:38","url":"https://cbre.com.hk"}
+{"attempt":1,"level":"info","message":"Successfully scraped URL","service":"seo-tech-check","statusCode":200,"timestamp":"2025-06-19 20:00:40","url":"https://cbre.com.hk"}
+{"analysisData":{"issuesCount":6,"score":81},"level":"info","message":"SEO Analysis completed","service":"seo-tech-check","timestamp":"2025-06-19 20:00:40","type":"seo_analysis","url":"https://cbre.com.hk"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"seo-tech-check","timestamp":"2025-06-19 20:03:14"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 20:03:22"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 20:03:22"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"seo-tech-check","timestamp":"2025-06-19 20:03:29"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 20:03:55"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 20:03:55"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"seo-tech-check","timestamp":"2025-06-19 20:04:04"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 20:06:29"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 20:06:29"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"seo-tech-check","timestamp":"2025-06-19 20:13:20"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 23:30:29"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 23:30:29"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 23:37:18"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 23:37:18"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"seo-tech-check","timestamp":"2025-06-19 23:38:52"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 23:42:48"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 23:42:48"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 23:46:22"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 23:46:22"}
+{"level":"info","message":"SEO Tech Check Backend server running on port 3001","service":"seo-tech-check","timestamp":"2025-06-19 23:47:35"}
+{"level":"info","message":"Environment: development","service":"seo-tech-check","timestamp":"2025-06-19 23:47:35"}
+{"level":"info","message":"Starting SEO analysis","options":{"includeImages":true,"includeLinks":true,"includePerformance":true,"timeout":20000},"service":"seo-tech-check","timestamp":"2025-06-20 00:14:16","url":"https://cbre.com.hk"}
+{"attempt":1,"level":"info","message":"Successfully scraped URL","service":"seo-tech-check","statusCode":200,"timestamp":"2025-06-20 00:14:19","url":"https://cbre.com.hk"}
+{"analysisData":{"issuesCount":6,"score":81},"level":"info","message":"SEO Analysis completed","service":"seo-tech-check","timestamp":"2025-06-20 00:14:19","type":"seo_analysis","url":"https://cbre.com.hk"}

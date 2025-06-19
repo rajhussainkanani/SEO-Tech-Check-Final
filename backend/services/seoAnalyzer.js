@@ -47,7 +47,8 @@ class SEOAnalyzer {
    * Analyze metadata (title, description, keywords)
    */
   analyzeMetadata($) {
-    const title = $('title').text();
+    const titles = $('title');
+    const title = titles.first().text();
     const metaDescription = $('meta[name="description"]').attr('content');
     const metaKeywords = $('meta[name="keywords"]').attr('content');
     const canonical = $('link[rel="canonical"]').attr('href');
@@ -70,6 +71,12 @@ class SEOAnalyzer {
     };
 
     // Title analysis
+    if (titles.length === 0) {
+      results.title.issues.push('Missing title tag');
+    } else if (titles.length > 1) {
+      results.title.issues.push('Multiple title tags found; only the first will be used');
+    }
+
     if (!title) {
       results.title.issues.push('Missing title tag');
     } else {
