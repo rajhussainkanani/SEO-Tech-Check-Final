@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2196f3" />
+    <meta
+      name="description"
+      content="SEO Tech Check - Comprehensive technical SEO analysis tool to improve your search engine visibility"
+    />
+    <meta name="keywords" content="SEO, technical SEO, website analysis, search engine optimization, SEO audit" />
+    <meta name="author" content="SEO Tech Check Team" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seo-tech-check.com/" />
+    <meta property="og:title" content="SEO Tech Check - Technical SEO Analysis Tool" />
+    <meta property="og:description" content="Get comprehensive technical SEO analysis of your website with actionable insights to improve search engine visibility." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://seo-tech-check.com/" />
+    <meta property="twitter:title" content="SEO Tech Check - Technical SEO Analysis Tool" />
+    <meta property="twitter:description" content="Get comprehensive technical SEO analysis of your website with actionable insights to improve search engine visibility." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SEO Tech Check",
+      "description": "Comprehensive technical SEO analysis tool",
+      "url": "https://seo-tech-check.com",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "SEO Tech Check Team"
+      }
+    }
+    </script>
+
+    <title>SEO Tech Check - Technical SEO Analysis Tool</title>
+  </head>
+  <body>
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #f5f5f5;">
+        <h1>JavaScript Required</h1>
+        <p>You need to enable JavaScript to run this SEO analysis tool.</p>
+        <p>Please enable JavaScript in your browser settings and refresh the page.</p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('%PUBLIC_URL%/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+service: seo-tech-check-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  stage: prod
+  environment:
+    NODE_ENV: production
+    SCRAPE_DO_API_KEY: ef8324bc40db40949fd2819c8338c2ea0d9573d2940
+    CORS_ALLOWED_ORIGINS: http://seo-tech-check-app.s3-website-us-east-1.amazonaws.com
+  httpApi:
+    cors:
+      allowedOrigins:
+        - http://seo-tech-check-app.s3-website-us-east-1.amazonaws.com
+        - https://seo-tech-check-app.s3-website-us-east-1.amazonaws.com
+      allowedHeaders:
+        - Content-Type
+        - Authorization
+      allowedMethods:
+        - GET
+        - POST
+        - OPTIONS
+      allowCredentials: false
+
+functions:
+  app:
+    handler: lambda.handler
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: ANY
+      - httpApi:
+          path: /
+          method: ANY
+    timeout: 30
+
+plugins:
+  - serverless-offline
