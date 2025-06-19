@@ -32,6 +32,8 @@ env:
     value: "100"
   - name: LOG_LEVEL
     value: info
+  - name: REACT_APP_API_URL
+    value: "https://zm32ek2v4y.us-east-1.awsapprunner.com/api"
 
 instance:
   cpu: 1
