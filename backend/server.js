@@ -44,7 +44,7 @@ app.use('/api', limiter);
 
 // CORS configuration
 app.use(cors({
-  origin: ['https://zm32ek2v4y.us-east-1.awsapprunner.com', 'http://localhost:3000'],
+  origin: ['https://zm32ek2v4y.us-east-1.awsapprunner.com'],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true

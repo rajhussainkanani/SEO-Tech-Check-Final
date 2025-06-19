@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with default configuration
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3001/api',
+  baseURL: process.env.REACT_APP_API_URL || 'https://zm32ek2v4y.us-east-1.awsapprunner.com/api',
   timeout: 60000, // 60 seconds timeout for SEO analysis
   headers: {
     'Content-Type': 'application/json',
