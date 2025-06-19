@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with default configuration
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://zm32ek2v4y.us-east-1.awsapprunner.com/api',
+  baseURL: '/api',  // Use relative path since frontend and backend are served from same domain
   timeout: 60000, // 60 seconds timeout for SEO analysis
   headers: {
     'Content-Type': 'application/json',
@@ -134,10 +134,7 @@ export const getRecommendations = async () => {
  */
 export const checkHealth = async () => {
   try {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_URL || 'http://localhost:3001'}/health`,
-      { timeout: 5000 }
-    );
+    const response = await axios.get('/health', { timeout: 5000 });
     return response.status === 200;
   } catch (error) {
     console.error('Health check failed:', error);
