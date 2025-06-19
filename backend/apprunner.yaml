@@ -38,6 +38,6 @@ run:
     # to the *actual* App Runner URL of your frontend service once deployed.
     # You'll need to update this after deploying the frontend.
     - name: FRONTEND_URL
-      value: "YOUR_FRONTEND_APPRUNNER_URL_HERE" # e.g., https://your-frontend-service-id.region.awsapprunner.com
+      value: "https://fimzrmr6ue.us-east-1.awsapprunner.com" # e.g., https://your-frontend-service-id.region.awsapprunner.com
     - name: CORS_ALLOWED_ORIGINS
-      value: "YOUR_FRONTEND_APPRUNNER_URL_HERE" # e.g., https://your-frontend-service-id.region.awsapprunner.com
+      value: "https://fimzrmr6ue.us-east-1.awsapprunner.com" # e.g., https://your-frontend-service-id.region.awsapprunner.com

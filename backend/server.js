@@ -3,6 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
 require('dotenv').config();
 
 const logger = require('./utils/logger');
@@ -34,18 +35,18 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
-app.use(limiter);
+app.use('/api', limiter);
 
 // CORS configuration
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true,
-}));
+app.use(cors());
 
 // Body parsing middleware
 app.use(compression());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'build')));
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -58,6 +59,11 @@ app.get('/health', (req, res) => {
 
 // API routes
 app.use('/api/seo', seoRoutes);
+
+// Serve frontend for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
+});
 
 // Global error handler
 app.use((err, req, res, next) => {
@@ -72,14 +78,6 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: 'Internal server error',
     message: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong',
-  });
-});
-
-// 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({
-    error: 'Not found',
-    message: 'The requested resource was not found',
   });
 });
 

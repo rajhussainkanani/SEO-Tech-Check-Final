@@ -2,9 +2,9 @@ version: 1.0
 runtime: nodejs18
 build:
   commands:
-    - npm ci --only=production
+    - cd backend && npm ci --only=production
 start:
-  command: npm start
+  command: cd backend && npm start
   network:
     port: 3001
     healthcheck:
